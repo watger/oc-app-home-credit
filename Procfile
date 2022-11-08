@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run ./Dashboard/app_db.py
+web: sh setup.sh && streamlit run ./Dashboard/app_db.py && uvicorn app:appf
