@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run ./Dashboard/app_db.py --bind :$PORT && uvicorn app:appf
+web: sh setup.sh && streamlit run ./Dashboard/app_db.py && uvicorn --bind :$PORT app:appf
