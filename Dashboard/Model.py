@@ -21,7 +21,7 @@ class HCRModel:
     #    if exists. If not, calls the _train_model method and 
     #    saves the model
     def __init__(self):
-        self.df = pd.read_csv('C:/Users/willi/Desktop/WILLIAM/E_LEARNING/OC_Projects/OC_Projects/Projet 7/data_200.csv',
+        self.df = pd.read_csv('../Data/data_200.csv',
                               #low_memory=False, 
                               #error_bad_lines = False, 
                               #engine ='python'
@@ -29,7 +29,7 @@ class HCRModel:
         self.df = self.df.head(100)
         self.df = self.df.rename(columns = lambda x:re.sub('[^A-Za-z0-9_]+', '', x))
         #self.df = joblib.load('https://github.com/watger/OC_Projects.git/Projet 7/data.csv')
-        self.model_fname_ = 'C:/Users/willi/Desktop/WILLIAM/E_LEARNING/OC_Projects/OC_Projects/Projet 7/model_f.joblib'
+        self.model_fname_ = '../Data/model_f.joblib'
         try:
             self.model = joblib.load(self.model_fname_)
         except Exception as _:
@@ -37,7 +37,7 @@ class HCRModel:
             #self.model = self._train_model()
             #joblib.dump(self.model, self.model_fname_)
         
-        self.scaler_fname_ = 'C:/Users/willi/Desktop/WILLIAM/E_LEARNING/OC_Projects/OC_Projects/Projet 7/scaler.joblib'
+        self.scaler_fname_ = '../Data/scaler.joblib'
         try:
             self.scaler = joblib.load(self.scaler_fname_)
         except Exception as _:
