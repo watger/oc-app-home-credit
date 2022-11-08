@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run ./Dashboard/app_db.py && uvicorn --bind 0.0.0.0:8000 app:appf
+web: sh setup.sh && streamlit run ./Dashboard/app_db.py && gunicorn -w 4 -k uvicorn.workers.UvicornWorker app:appf
