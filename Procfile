@@ -1,1 +1,1 @@
-worker: sh setup.sh && uvicorn app:appf --reload && streamlit run app_db.py
+web: sh setup.sh && uvicorn app:appf --bind :$PORT && streamlit run app_db.py
