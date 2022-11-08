@@ -45,8 +45,9 @@ st.set_page_config(
 # 3. Expose the prediction functionality, make a prediction from the passed
 #    JSON data and return the predicted flower species with the confidence
 def predict_risks(id_client):
-    response = requests.get(
-        "http://127.0.0.1:8000/predict?id_client="+str(id_client))
+    #response = requests.get("http://127.0.0.1:8000/predict?id_client="+str(id_client))
+    response = requests.get("https://app-home-credit.herokuapp.com/"+str(id_client))
+    
     content = json.loads(response.content.decode('utf-8'))
     
     if response.status_code != 200:
