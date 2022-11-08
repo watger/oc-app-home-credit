@@ -1,1 +1,1 @@
-web: uvicorn app:appf --reload && sh setup.sh && streamlit run app_db.py
+web: sh setup.sh && uvicorn app:appf --reload && streamlit run app_db.py
