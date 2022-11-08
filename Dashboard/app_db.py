@@ -46,7 +46,7 @@ st.set_page_config(
 #    JSON data and return the predicted flower species with the confidence
 def predict_risks(id_client):
     response = requests.get(
-        "http://0.0.0.0:8000/predict?id_client="+str(id_client))
+        "http://0.0.0.0:5000/predict?id_client="+str(id_client))
     content = json.loads(response.content.decode('utf-8'))
     
     if response.status_code != 200:
